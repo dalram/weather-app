@@ -12,14 +12,19 @@ function App() {
   );
   const dispatch = useDispatch();
   const { isLoading, fetchWeatherData } = useWeatherData();
+
+  const iconUrl = `http://openweathermap.org/img/w/${weatherInfo.weather[0].icon}.png`;
   useEffect(() => {
     fetchWeatherData("Vilnius");
   }, []);
-  console.log(weatherInfo);
 
   return (
     <>
-      <Counter />
+      <div>{weatherInfo.name}</div>
+      <div>{weatherInfo.main.feels_like.toFixed()}</div>
+      <div>{weatherInfo.weather[0].description}</div>
+      <img src={iconUrl} alt={weatherInfo.weather[0].description} />
+      {/* <Counter /> */}
     </>
   );
 }

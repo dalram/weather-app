@@ -1,26 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { weatherData } from "../types";
 
 export type weatherDataState = {
-  weatherData: {
-    name: string;
-    coord: {
-      lon: number;
-      lat: number;
-    };
-    main: {
-      temp: number;
-      feels_like: number;
-      temp_max: number;
-      temp_min: number;
-    };
-    weather: [
-      {
-        description: string;
-        icon: string;
-      }
-    ];
-  };
+  weatherData: weatherData;
 };
 
 const initialState: weatherDataState = {
@@ -49,7 +32,7 @@ export const weatherDataSlice = createSlice({
   name: "data",
   initialState,
   reducers: {
-    weatherByCity: (state, action: PayloadAction<weatherDataState>) => {
+    weatherByCity: (state, action: PayloadAction<weatherData>) => {
       state.weatherData = action.payload;
     },
   },

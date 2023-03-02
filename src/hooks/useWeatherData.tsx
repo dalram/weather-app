@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { weatherByCity } from "../app/weatherDataSlice";
+import { weatherByCity, weatherDataState } from "../app/weatherDataSlice";
 
 export const API_URL = "https://api.openweathermap.org/data/2.5";
 
