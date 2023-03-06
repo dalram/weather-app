@@ -36,7 +36,7 @@ function App() {
           </button>
 
           <p>{weatherInfo.name}</p>
-          <p>{weatherInfo.main.feels_like.toFixed()}</p>
+          <p>{weatherInfo.main.temp.toFixed()}</p>
           <p>{weatherInfo.weather[0].description}</p>
           <img
             src={iconUrl}
